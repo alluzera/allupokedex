@@ -81,3 +81,14 @@ body {
     background-color: #729f3f;
     color: #fff
 }
+
+.badge-climber {
+    background-color: #66482b;
+    color: #fff
+}
+
+.badge-developer {
+    margin-left: .7em;
+    background-color: #882020;
+    color: #fff
+}
