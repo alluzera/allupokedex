@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Thiago's Pokédex</title>
   <link rel="stylesheet" href="style.css">
+  <script src="app.js">
+  </script>
   <style>
   </style>
 </head>
@@ -16,11 +18,13 @@
             <figure class="pokemon-img">
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasaur">
             </figure>
-            <span class="pokemon-number">Nº001</span>
-            <h1 class="pokemon-name">Bulbasaur</h1>
-            <span class="badge badge-grass">Grass</span>
-            <span class="badge badge-poison">Poison</span>
+            <span class="pokemon-number">Nº0</span><span id='apiNumber' class="pokemon-number"></span>
+            <h1 id='apiName' class="pokemon-name"></h1>
+            <span id='apiType' class="badge badge-grass"></span>
+            <p class='pokemon-description' id="apiDescription"></p>
         </div>
+
+        
         <div class="pokemon">
             <figure class="pokemon-img">
                 <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/002.png" alt="Ivysaur">
