@@ -14,7 +14,7 @@ header {
 
 body {
     font-family: arial, helvetica, sans-serif;
-  }
+}
 
 .pokedex {
     display: grid;
@@ -24,15 +24,15 @@ body {
     max-width: 100%;
     margin-bottom: 50px;
 }
-  
-.pokemon-img {   
+
+.pokemon-img {
     background-color: #f2f2f2;
     margin-top: 30px;
 }
 
 .pokemon-number {
     font-weight: bold;
-    color:#999999;
+    color: #999999;
     font-size: .85em;
 }
 
@@ -40,7 +40,7 @@ body {
     font-family: Century Gothic;
     margin: 12px 8px;
     font-weight: 50;
-    color:#2c2c2c;
+    color: #2c2c2c;
     font-size: 1.6em;
 }
 
@@ -61,10 +61,9 @@ body {
 .badge-poison {
     background-color: #b97fc6;
     color: #fff
-
 }
 
-.badge-fire { 
+.badge-fire {
     background-color: #fd7d22;
     color: #fff
 }
