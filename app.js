@@ -5,13 +5,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         pokemons.forEach((pokemon) => {
             console.log(pokemon);
 
-
             const pokemonCard = document.createElement('div');
 
             const pokeImg = document.createElement('img');
             pokeImg.src = pokemon.img;
             pokeImg.classList.add("pokemon-img");
-
 
             const pokeNumber = document.createElement('p');
             if (pokemon.id < 10) {
@@ -27,8 +25,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             pokeName.textContent = pokemon.name;
             pokeName.classList.add("pokemon-name");
 
-
-
             pokemonCard.appendChild(pokeImg);
             pokemonCard.appendChild(pokeNumber);
             pokemonCard.appendChild(pokeName);
@@ -40,17 +36,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 pokeType.classList.add('badge', `badge-${pokemon.type[i]}`);
             }
 
-
-
-
             myCustomDiv.appendChild(pokemonCard);
 
         })
 
         document.body.appendChild(myCustomDiv);
     }
-
-
 
     fetch("https://raw.githubusercontent.com/alluzera/allupokedex/pokedex-API/pokestats.json?pageSize=20")
         .then(response => response.json())
