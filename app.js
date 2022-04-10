@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
             const pokeImg = document.createElement('img');
             pokeImg.src = pokemon.img;
-            pokeImg.classList.add("pokemon-img");
+            pokeImg.classList.add('pokemon-img');
+            pokeImg.setAttribute('id', `${pokemon.name}`)
 
             const pokeNumber = document.createElement('p');
             if (pokemon.id < 10) {
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             pokemonCard.appendChild(pokeImg);
             pokemonCard.appendChild(pokeNumber);
             pokemonCard.appendChild(pokeName);
+            pokemonCard.classList.add('poke-card');
 
             for (let i = 0; i < pokemon.type.length; i++) {
                 const pokeType = document.createElement('span');
@@ -41,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         })
 
         document.body.appendChild(myCustomDiv);
+
     }
 
     fetch("https://raw.githubusercontent.com/alluzera/allupokedex/pokedex-API/pokestats.json?pageSize=20")
