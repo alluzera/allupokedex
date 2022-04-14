@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeImg.classList.add('pokemon-img');
 
             const pokeSoundButton = document.createElement('img');
-            pokeSoundButton.src = "sound-button.png"
+            pokeSoundButton.src = "images/sound-button.png"
             pokeSoundButton.classList.add('sound-button')
 
             const pokeNumber = document.createElement('p');
