@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     const updateViewWithPokemons = (pokemons) => {
         pokemons.forEach((pokemon) => {
-            console.log(pokemon);
 
             const pokemonCard = document.createElement('div');
-
             const pokeImg = document.createElement('img');
             pokeImg.src = pokemon.img;
             pokeImg.classList.add('pokemon-img');
@@ -16,7 +14,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeSoundButton.src = "images/sound-button.png"
             pokeSoundButton.classList.add('sound-button')
             pokeSoundButton.addEventListener("click", function () {
-                let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace("'", "").toLowerCase()}.ogg`);
+                console.log(pokemon.name)
+                let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace(' ', '').replace('.', '').replace("'", '').toLowerCase()}.ogg`);
                 audio.oncanplaythrough = function () {
                     audio.play();
                 }
