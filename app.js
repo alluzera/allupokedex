@@ -15,6 +15,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             const pokeSoundButton = document.createElement('img');
             pokeSoundButton.src = "images/sound-button.png"
             pokeSoundButton.classList.add('sound-button')
+            pokeSoundButton.addEventListener("click", function () {
+                let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace("'", "").toLowerCase()}.ogg`);
+                audio.oncanplaythrough = function () {
+                    audio.play();
+                }
+            })
 
             const pokeNumber = document.createElement('p');
             if (pokemon.id < 10) {
@@ -30,12 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeName.textContent = pokemon.name;
             pokeName.classList.add("pokemon-name");
 
-            pokeSoundButton.addEventListener("click", function () {
-                let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace("'", "").toLowerCase()}.ogg`);
-                audio.oncanplaythrough = function () {
-                    audio.play();
-                }
-            })
+            
 
             pokemonCard.appendChild(pokeSoundButton);
             pokemonCard.appendChild(pokeImg);

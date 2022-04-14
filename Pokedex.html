@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
@@ -9,10 +10,45 @@
     </script>
     <script>
     </script>
-</head> 
+</head>
+
 <body>
     <header>
         <h1>Pokédex</h1>
+        <a href="https://github.com/alluzera/allupokedex" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="git-logo">
+        </a>
     </header>
+    <main>
+        <form class="pokemon-search">
+            <div>
+                <label for="filter-pokemon">Pokémon:</label>
+                <input type="text" id="filter-pokemon">
+            </div>
+            <div>
+                <label for="filter-type">Type:</label>
+                <select id="filter-type">
+                    <option>Show All Pokémon</option>
+                    <option>Bug</option>
+                    <option>Dragon</option>
+                    <option>Electric</option>
+                    <option>Fairy</option>
+                    <option>Fighting</option>
+                    <option>Fire</option>
+                    <option>Flying</option>
+                    <option>Ghost</option>
+                    <option>Grass</option>
+                    <option>Ice</option>
+                    <option>Normal</option>
+                    <option>Poison</option>
+                    <option>Psychic</option>
+                    <option>Rock</option>
+                    <option>Steel</option>
+                    <option>Water</option>
+                </select>
+            </div>
+        </form>
+    </main>
 </body>
+
 </html>

@@ -1,6 +1,6 @@
 * {
     margin: 0;
-    font-family: "Flexo-Demi",arial,sans-serif;
+    font-family: "Flexo-Demi", arial, sans-serif;
 }
 
 header {
@@ -14,7 +14,25 @@ header {
     margin-bottom: 50px;
 }
 
+.git-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.pokemon-search {
+    display: grid;
+    grid-template-columns: repeat(2, 400px);
+    justify-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
 .pokedex {
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 250px);
     justify-items: center;
@@ -140,6 +158,15 @@ header {
     top: 10px;
 }
 
+@keyframes pokemon-up {
+    100% {
+        transform: translateY(0);
+    }
+
+    30% {
+        transform: translateY(-30px);
+    }
+}
 
 .poke-card {
     border-radius: 15px;
@@ -150,6 +177,10 @@ header {
 }
 
 .poke-card:hover {
+    animation: pokemon-up .4s;
+}
+
+/*.poke-card:hover {
     box-shadow: 10px 5px 5px #b1b1b1;
     margin: 0 8px 8px 0;
 }
