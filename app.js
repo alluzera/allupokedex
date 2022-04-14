@@ -1,6 +1,7 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function (event) {
     const myCustomDiv = document.createElement('div');
     myCustomDiv.classList.add('pokedex');
+
     const updateViewWithPokemons = (pokemons) => {
         pokemons.forEach((pokemon) => {
             console.log(pokemon);
@@ -10,7 +11,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
             const pokeImg = document.createElement('img');
             pokeImg.src = pokemon.img;
             pokeImg.classList.add('pokemon-img');
-            pokeImg.setAttribute('id', `${pokemon.name}`)
+
+            const pokeSoundButton = document.createElement('img');
+            pokeSoundButton.src = "sound-button.png"
+            pokeSoundButton.classList.add('sound-button')
 
             const pokeNumber = document.createElement('p');
             if (pokemon.id < 10) {
@@ -26,6 +30,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
             pokeName.textContent = pokemon.name;
             pokeName.classList.add("pokemon-name");
 
+            pokeSoundButton.addEventListener("click", function () {
+                let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace("'", "").toLowerCase()}.ogg`);
+                audio.oncanplaythrough = function () {
+                    audio.play();
+                }
+            })
+
+            pokemonCard.appendChild(pokeSoundButton);
             pokemonCard.appendChild(pokeImg);
             pokemonCard.appendChild(pokeNumber);
             pokemonCard.appendChild(pokeName);
@@ -45,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.body.appendChild(myCustomDiv);
 
     }
-
     fetch("https://raw.githubusercontent.com/alluzera/allupokedex/pokedex-API/pokestats.json?pageSize=20")
         .then(response => response.json())
         .then(jsonResponse => updateViewWithPokemons(jsonResponse.data))
