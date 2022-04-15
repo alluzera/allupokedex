@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js">
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Pokédex</h1>
+        <a href="https://github.com/alluzera/allupokedex" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+        </a>
+    </header>
+    <section>
+        <label>
+            <input type="checkbox" id="poke-switch">
+            <span></span>
+            <text>OFF</text>
+            <text>ON</text>
+        </label>
+    </section>
+    <main>
+        <form class="pokemon-search">
+            <div class="form">
+                <div class="input-data">
+                <input type="text" name="filter-pokemon" autocomplete="off" id="form-input">
+                <label for="filter-pokemon" class="form-label">Pokémon</label>
+                </div>
+            </div>
+            <div>
+                <label for="filter-type"></label>
+                <select id="filter-type">
+                    <option>Type</option>
+                    <option>Bug</option>
+                    <option>Dragon</option>
+                    <option>Electric</option>
+                    <option>Fairy</option>
+                    <option>Fighting</option>
+                    <option>Fire</option>
+                    <option>Flying</option>
+                    <option>Ghost</option>
+                    <option>Grass</option>
+                    <option>Ice</option>
+                    <option>Normal</option>
+                    <option>Poison</option>
+                    <option>Psychic</option>
+                    <option>Rock</option>
+                    <option>Steel</option>
+                    <option>Water</option>
+                </select>
+            </div>
+            <div>
+                <input type="button" name="team-builder" id="team-builder" value="Make a Pokémon Team for my Journey">
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
