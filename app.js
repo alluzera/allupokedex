@@ -9,9 +9,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeImg.src = pokemon.img;
             pokeImg.classList.add('pokemon-img');
 
-            const pokeSoundButton = document.createElement('img');
-            pokeSoundButton.src = "images/sound-button.png"
-            pokeSoundButton.classList.add('sound-button')
+            const pokeSoundButton = document.createElement('i');
+            pokeSoundButton.dataset.feather = 'volume-2';
+            pokeSoundButton.classList.add('sound-button');
             pokeSoundButton.addEventListener('click', function () {
                 console.log(pokemon.name)
                 let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace(' ', '').replace('.', '').replace("'", '').toLowerCase()}.ogg`);
@@ -50,26 +50,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
             myCustomDiv.appendChild(pokemonCard);
 
             const pokeNameInput = document.getElementById('form-input');
-            const pokeTypeInput = document.getElementById('filter-type')
+            const pokeTypeInput = document.getElementById('filter-type');
+            const pokeSwitchLabel = document.getElementById('switch-label');
             const pokeSwitch = document.getElementById('poke-switch');
             pokeSwitch.addEventListener('click', function () {
                 if (pokeSwitch.checked) {
-                    document.body.style.backgroundColor = 'rgb(58, 58, 58)';
-                    pokeNameInput.style.backgroundColor = 'rgb(58, 58, 58)';
-                    pokeName.style.color = 'rgb(246, 246, 246)';
-                    pokemonCard.style.backgroundColor = 'rgb(46, 46, 46)';
-                    pokemonCard.style['boxShadow'] = '5px 3px 3px rgb(24, 24, 24)';
+                    document.body.style.backgroundColor = '#3a3a3a';
+                    pokeNameInput.style.backgroundColor = '#3a3a3a';
+                    pokeSwitchLabel.style.backgroundColor = '#3a3a3a'
+                    pokeSwitchLabel.style.border = '4px solid #2e2e2e'
+                    pokeName.style.color = '#f6f6f6';
+                    pokemonCard.style.backgroundColor = '#2e2e2e';
+                    pokemonCard.style.boxShadow = '5px 3px 3px #181818';
                 } else {
                     document.body.style.backgroundColor = '#fff';
                     pokeNameInput.style.backgroundColor = '#fff';
-                    pokeName.style.color = 'rgb(44, 44, 44)';
-                    pokemonCard.style.backgroundColor = 'rgb(242, 242, 242)';
-                    pokemonCard.style['boxShadow'] = '5px 3px 3px rgb(168, 168, 168)';
+                    pokeSwitchLabel.style.backgroundColor = '#fff'
+                    pokeSwitchLabel.style.border = '4px solid #f2f2f2'
+                    pokeName.style.color = '#2c2c2c';
+                    pokemonCard.style.backgroundColor = '#f2f2f2';
+                    pokemonCard.style.boxShadow = '5px 3px 3px #a8a8a8';
                 }
             })
 
         })
         document.body.appendChild(myCustomDiv);
+        feather.replace();
     }
     fetch("https://raw.githubusercontent.com/alluzera/allupokedex/pokedex-API/pokestats.json?pageSize=20")
         .then(response => response.json())

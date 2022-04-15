@@ -13,30 +13,30 @@ header {
     justify-items: center;
     justify-content: center;
     text-align: center;
+    line-height: 50px;
     max-width: 100%;
+    height: 80px;
     padding: 15px;
     margin-bottom: 25px;
 }
 
-header ion-icon {
+.heaeder-icon {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 50px;
-    height: 50px;
+    top: 18px;
+    left: 15px;
     cursor: pointer;
     color: #212121
 }
 
 section label {
     position: absolute;
-    left: 110px;
-    top: 8px;
-    width: 100px;
-    height: 50px;
-    background: #3e3e3e;
-    box-shadow: 0 0 0 4px #303030;
-    border-radius: 25px;
+    left: 80px;
+    top: 5px;
+    width: 140px;
+    height: 70px;
+    background: #fff;
+    border: 4px solid #f2f2f2;
+    border-radius: 35px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -50,11 +50,11 @@ section label input {
 
 section label span {
     position: absolute;
-    left: 50px;
-    width: 50px;
-    height: 50px;
+    left: 70px;
+    width: 70px;
+    height: 70px;
     background: url(https://i.imgur.com/gXW0YaU.png);
-    background-size: 50px;
+    background-size: 70px;
     transition: 1.5s;
 }
 
@@ -74,8 +74,7 @@ section label text {
     transition: 1.5s;
 }
 
-section label input:checked~text {
-    color: rgb(222, 73, 66);
+section label input:checked ~ span {
     filter: drop-shadow(0 0 15px rgb(222, 73, 66)) drop-shadow(0 0 50px rgb(222, 73, 66));
 }
 
@@ -88,8 +87,7 @@ section label text:last-child {
     filter: drop-shadow(0 0 15px rgb(222, 73, 66)) drop-shadow(0 0 50px rgb(222, 73, 66));
 }
 
-section label input:checked~text:last-child {
-    color: #8f8f8f;
+section label input:checked ~ span :last-child {
     filter: none;
 }
 
