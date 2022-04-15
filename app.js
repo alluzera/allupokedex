@@ -9,11 +9,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeImg.src = pokemon.img;
             pokeImg.classList.add('pokemon-img');
 
+            /*
             const pokeSoundButton = document.createElement('i');
             pokeSoundButton.dataset.feather = 'volume-2';
+            */
+            const pokeSoundButton = document.createElement('img');
+            pokeSoundButton.src = 'images/sound-button.png';
             pokeSoundButton.classList.add('sound-button');
             pokeSoundButton.addEventListener('click', function () {
-                console.log(pokemon.name)
                 let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace(' ', '').replace('.', '').replace("'", '').toLowerCase()}.ogg`);
                 audio.oncanplaythrough = function () {
                     audio.play();
