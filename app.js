@@ -49,15 +49,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             myCustomDiv.appendChild(pokemonCard);
 
+            const pokeNameInput = document.getElementById('form-input');
+            const pokeTypeInput = document.getElementById('filter-type')
             const pokeSwitch = document.getElementById('poke-switch');
             pokeSwitch.addEventListener('click', function () {
                 if (pokeSwitch.checked) {
                     document.body.style.backgroundColor = 'rgb(58, 58, 58)';
+                    pokeNameInput.style.backgroundColor = 'rgb(58, 58, 58)';
                     pokeName.style.color = 'rgb(246, 246, 246)';
                     pokemonCard.style.backgroundColor = 'rgb(46, 46, 46)';
                     pokemonCard.style['boxShadow'] = '5px 3px 3px rgb(24, 24, 24)';
                 } else {
-                    document.body.style.backgroundColor = 'rgb(255, 255, 255)';
+                    document.body.style.backgroundColor = '#fff';
+                    pokeNameInput.style.backgroundColor = '#fff';
                     pokeName.style.color = 'rgb(44, 44, 44)';
                     pokemonCard.style.backgroundColor = 'rgb(242, 242, 242)';
                     pokemonCard.style['boxShadow'] = '5px 3px 3px rgb(168, 168, 168)';

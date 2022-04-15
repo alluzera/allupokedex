@@ -29,14 +29,16 @@
     </section>
     <main>
         <form class="pokemon-search">
-            <div>
-                <label for="filter-pokemon">Pokémon:</label>
-                <input type="text" id="filter-pokemon">
+            <div class="form">
+                <div class="input-data">
+                <input type="text" name="filter-pokemon" autocomplete="off" id="form-input">
+                <label for="filter-pokemon" class="form-label">Pokémon</label>
+                </div>
             </div>
             <div>
-                <label for="filter-type">Type:</label>
+                <label for="filter-type"></label>
                 <select id="filter-type">
-                    <option>Show All Pokémon</option>
+                    <option>Type</option>
                     <option>Bug</option>
                     <option>Dragon</option>
                     <option>Electric</option>
@@ -54,6 +56,9 @@
                     <option>Steel</option>
                     <option>Water</option>
                 </select>
+            </div>
+            <div>
+                <input type="button" name="team-builder" id="team-builder" value="Make a Pokémon Team for my Journey">
             </div>
         </form>
     </main>
