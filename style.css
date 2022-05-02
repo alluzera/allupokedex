@@ -8,7 +8,8 @@
 
 
 header {
-    background-image: url("images/header.png"); /* Bulbasaur/backgroundColor: lighter #91c9bd darker #367755*/
+    background-image: url("images/header.png");
+    /* Bulbasaur/backgroundColor: lighter #91c9bd darker #367755*/
     color: rgb(222, 73, 66);
     justify-items: center;
     justify-content: center;
@@ -50,7 +51,7 @@ section label input {
 
 section label span {
     position: absolute;
-    left: 70px;
+    left: 60px;
     width: 70px;
     height: 70px;
     background: url(https://i.imgur.com/gXW0YaU.png);
@@ -63,31 +64,11 @@ section label input:checked~span {
     transform: rotate(-360deg);
 }
 
-
-section label text {
-    font-weight: bold;
-    color: #8f8f8f;
-    position: absolute;
-    font-family: consolas;
-    left: -35px;
-    filter: none;
-    transition: 1.5s;
+section label input:checked~span {
+    filter: drop-shadow(0 0 15px rgb(222, 73, 66)) drop-shadow(0 0 20px rgb(222, 73, 66));
 }
 
-section label input:checked ~ span {
-    filter: drop-shadow(0 0 15px rgb(222, 73, 66)) drop-shadow(0 0 50px rgb(222, 73, 66));
-}
-
-section label text:last-child {
-    color: rgb(222, 73, 66);
-    font-weight: bold;
-    position: absolute;
-    left: initial;
-    right: -30px;
-    filter: drop-shadow(0 0 15px rgb(222, 73, 66)) drop-shadow(0 0 50px rgb(222, 73, 66));
-}
-
-section label input:checked ~ span :last-child {
+section label input:checked~span :last-child {
     filter: none;
 }
 
@@ -108,7 +89,7 @@ section label input:checked ~ span :last-child {
     height: 30px;
     width: 100%;
     position: relative;
-    
+
 }
 
 .form .input-data input {
@@ -119,7 +100,7 @@ section label input:checked ~ span :last-child {
     border-bottom: 1px solid silver;
 }
 
-.input-data input:focus ~ label {
+.input-data input:focus~label {
     transform: translateY(-30px);
     font-size: 15px;
     color: grey;
@@ -273,6 +254,8 @@ section label input:checked ~ span :last-child {
     position: relative;
     left: 197px;
     top: 10px;
+    font-size: 24px;
+    color:#212121
 }
 
 @keyframes pokemon-up {

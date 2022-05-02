@@ -13,8 +13,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             const pokeSoundButton = document.createElement('i');
             pokeSoundButton.dataset.feather = 'volume-2';
             */
+           
             const pokeSoundButton = document.createElement('img');
             pokeSoundButton.src = 'images/sound-button.png';
+
+            const pokeSoundButton2 = document.createElement('i');
+            pokeSoundButton2.classList.add('fas', 'fa-volume-up', 'sound-button');
             pokeSoundButton.classList.add('sound-button');
             pokeSoundButton.addEventListener('click', function () {
                 let audio = new Audio(`https://play.pokemonshowdown.com/audio/cries/${pokemon.name.replace(' ', '').replace('.', '').replace("'", '').toLowerCase()}.ogg`);
@@ -38,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             pokeName.classList.add("pokemon-name");
 
             pokemonCard.appendChild(pokeSoundButton);
+            pokemonCard.appendChild(pokeSoundButton2);
             pokemonCard.appendChild(pokeImg);
             pokemonCard.appendChild(pokeNumber);
             pokemonCard.appendChild(pokeName);
@@ -78,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         })
         document.body.appendChild(myCustomDiv);
-        feather.replace();
+
     }
     fetch("https://raw.githubusercontent.com/alluzera/allupokedex/pokedex-API/pokestats.json?pageSize=20")
         .then(response => response.json())
